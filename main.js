@@ -16,14 +16,24 @@ define(function (require, exports, module) {
 		var text = editor.document.getText();
         var selected = editor.getSelectedText();
 		var lines = text.split(/\n/);
-		var line = "";
-		var lineIndex = 0;
-		for(var i=0;i<lines.length;i++){
-			line = lines[i];
-			if(line.indexOf(selected)>=0 && line.indexOf("function")>=0) lineIndex=i;
+		var lineIndex = -1;
+		var tlen = selected.length;
+		for(var i=0;i<lines.length;i++)
+		{
+			var line = lines[i];
+			var foundAt = line.indexOf(selected);
+			if(foundAt>=0 && line.indexOf("function")>=0) 
+			{
+				var charAfter = line.substr(foundAt+tlen,1);
+				var charBefore = line.substr(foundAt-1,1);	
+				if(charAfter!=" " && charAfter!="(" || charBefore!=" ") {lineIndex = -1;} else { lineIndex = i;}
+			}
 		}
+		
+		if(lineIndex!=-1){
 		  editor.setCursorPos(lineIndex,0, true, false);
 		  editor._codeMirror.setSelection({line: lineIndex, ch: 0}, {line: lineIndex, ch: null});
+		  }
     }
 	
 

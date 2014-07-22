@@ -1,0 +1,12 @@
+{
+    "name": "brackets-functionfinder",
+    "title": "FunctionFinder",
+    "description": "Quickly go to the function under your cursor.",
+    "homepage": "https://github.com/SlashySlash/FunctionFinder",
+    "version": "1.0.0",
+    "author": "SlashySlash <smrklj69@gmail.com> (https://github.com/SlashySlash)",
+    "license": "MIT",
+    "engines": {
+        "brackets": ">=0.35.0"
+    }
+}
