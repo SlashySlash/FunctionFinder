@@ -1,7 +1,7 @@
 {
     "name": "brackets-functionfinder",
     "title": "FunctionFinder",
-    "description": "Quickly find the function under your cursor.",
+    "description": "Quickly find the function under your cursor. An extension that mirrors the Eclipse 'Open Declaration' functionality.",
     "homepage": "https://github.com/SlashySlash/FunctionFinder",
     "version": "1.0.0",
     "author": "SlashySlash <smrklj69@gmail.com> (https://github.com/SlashySlash)",
